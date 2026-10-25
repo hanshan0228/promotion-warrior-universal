@@ -1,16 +1,16 @@
 # Promotion Warrior 🛡️ (Universal Hunter Edition)
 
 > **通用型社媒流量猎手与账号养护专家（AI Agent Skill 完整可运行版）**  
-> 原文来源于 [USD.FAN](https://usd.fan) 崔晃晃分享的被动收入项目所用 AI Agent Skill，本项目包含**原版附件**及**官方缺失的配套 SQLite 数据库与防封去重引擎脚本**。
+> 本项目为面向各大主流社交平台的高转化、防封禁社媒流量增长与获客 Agent Skill，内置**完整版技能提示词与规范**及**配套 SQLite 数据库与防封去重引擎脚本**。
 
 ---
 
-## 📌 项目背景与来源说明
+## 📌 项目定位与架构目标
 
-在 USD.FAN 社区文章《被动收入项目所使用的skill》中，作者崔晃晃分享了用于多平台被动收入推广的 AI Agent Skill：
-* **核心目标**：针对不同垂直品类（Niche）在主流社媒（Reddit、X/Twitter、TikTok、Facebook、论坛等）进行自动潜伏、真实养号与高精准获客。
-* **原帖附件**：原帖附带 `SKILL.md.zip`（本项目仓库完整保留并在根目录归档）。
-* **配套补齐**：作者在文中说明因隐私原因未放出数据库及运行脚本，建议使用 AI 自行补齐。本项目已按 `SKILL.md` 的规范规范化实现了全套 `scripts/db.py` 调度与去重系统，开箱即用。
+针对不同垂直品类（Niche）在主流社媒（Reddit、X/Twitter、TikTok、Facebook、行业垂直论坛等）进行自动潜伏、真实养号与高精准获客：
+* **核心目标**：实现从“被动养号 $\to$ 需求感知 $\to$ 意图分层 $\to$ 软性植入 $\to$ 离场清理”的全链路自动化闭环。
+* **反聚类防封**：针对社媒平台严苛的反垃圾机制，从底层实现 24 小时关键词轮询、Jaccard 文本相似度校验与 DOM 物理查重。
+* **配套补齐**：规范化实现了全套 `scripts/db.py` 调度与去重系统，开箱即用。
 
 ---
 
@@ -91,14 +91,13 @@ python3 scripts/db.py check_similarity "Your proposed comment text..."
 
 ```text
 .
-├── SKILL.md            # 原版 Skill 提示词与规范定义
-├── SKILL.md.zip        # 从 USD.FAN 下载的原始压缩包归档
+├── SKILL.md            # Skill 提示词与规范定义
 ├── scripts/
 │   └── db.py           # 数据库读写、URL清洗、Jaccard查重 CLI 脚本
 ├── data/
 │   └── .gitkeep        # 运行时生成 history.db（已加入 .gitignore）
 ├── tests/
-│   └── test_db.py      # 数据库与逻辑单元测试（4/4 Passed）
+│   └── test_db.py      # 数据库与业务逻辑单元测试（4/4 Passed）
 ├── README.md           # 项目完整文档
 └── LICENSE             # MIT 开源协议
 ```

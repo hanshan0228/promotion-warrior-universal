@@ -76,8 +76,8 @@ description: 通用型社媒流量猎手与账号养护专家。基于 3-Tier �
     -   如果 `duplicate: true`，跳过。
 2.  **物理查重 (Page Scan)**: 
     -   **CRITICAL**: 在 `browser: { action: "open", ... }` 打开目标页面后，必须进行页面元素检查。
-    -   **Step A (Self-Check)**: 检查页面上是否已有 `Last_Syllabub8140` (或其他当前账号) 的回复。
-    -   **Step B (Link Check)**: 检查是否有同样的 `ttoh.app` 链接。
+    -   **Step A (Self-Check)**: 检查页面上是否已有我方账号 (或其他当前账号) 的回复。
+    -   **Step B (Link Check)**: 检查是否有同样的目标推广链接或品牌域名。
     -   **判定**: 任何一项命中 -> **停止并关闭**。
 3.  **构建回复 (The Craft)**:
     -   **引用**: 引用对方的一句痛点。
